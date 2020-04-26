@@ -3,23 +3,10 @@ import math
 
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 def answer():
     return str(math.log(int(time.time())))
-
-
-@pytest.fixture
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome()
-    yield browser
-
-    print("\nquit browser..")
-    browser.quit()
 
 
 @pytest.mark.parametrize("link",
